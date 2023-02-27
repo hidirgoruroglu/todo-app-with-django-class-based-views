@@ -1,0 +1,18 @@
+{% extends "todo/main.html" %}
+
+{% block content %}
+  
+
+<div class="header-bar">
+<h1>Giriş yap</h1>
+</div>
+<div class="card-body">
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input class="button" type="submit" value="Giriş yap">
+</form>
+<p>Hesabin yok mu? <a href="{% url 'register_view' %}">Kayit ol</a></p>
+
+</div>
+{% endblock content %}

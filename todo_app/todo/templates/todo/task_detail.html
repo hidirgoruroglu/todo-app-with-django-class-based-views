@@ -1,0 +1,16 @@
+{% extends "todo/main.html" %}
+{% block content %}
+<div class="header-bar">
+<h1>Görev: {{ task }}</h1>
+
+    <a href="{% url 'task_list_view' %}">&#8592; Geri dön</a>
+</div>
+<div class="card-body">
+<p>{{ task.description }}</p>
+{% if task.complate %}
+<p>Görev tamamlanmis</p>
+{% else %}
+<p>Görev tamamlanmamis</p>
+{% endif %}
+</div>
+{% endblock content %}

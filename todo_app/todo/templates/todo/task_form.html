@@ -1,0 +1,14 @@
+{% extends "todo/main.html" %}
+{% block content %}
+
+<div class="header-bar">
+    <a href="{% url 'task_list_view' %}">&#8592; Geri dön</a>
+</div>
+<div class="card-body">
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input class="button" value="Oluştur" type="submit">
+</form>
+</div>
+{% endblock content %}

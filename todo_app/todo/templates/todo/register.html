@@ -1,0 +1,19 @@
+{% extends "todo/main.html" %}
+{% block content %}
+<div class="header-bar">
+<h1>Kayit ol</h1>
+</div>
+<div class="card-body">
+<form method="post">
+    {% csrf_token %}
+    <label>{{ form.username.label }}</label>
+    {{ form.username }}
+    <label>{{ form.password1.label }}</label>
+    {{ form.password1 }}
+    <label>{{ form.password2.label }}</label>
+    {{ form.password2 }}
+    <input class="button" style="margin-top: 10px;" type="submit" value="Kayit ol">
+</form>
+<p>Zaten hesabin var mi? <a href="{% url 'custom_login_view' %}">Giriş yap</a></p>
+</div>
+{% endblock content %}
